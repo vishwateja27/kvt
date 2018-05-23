@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      My App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="map" style="height:50%; margin-left: 2%;margin-right: 2%; margin-top: 2%;"></div>
+
+  <ion-card>
+    <ion-card-header>
+      Latitude:
+    </ion-card-header>
+    <ion-card-content>
+      {{lat}}
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Longitude:
+    </ion-card-header>
+    <ion-card-content>
+      {{lon}}
+    </ion-card-content>
+  </ion-card>
+  <button ion-button (click)="startWatch()"> startwatch</button>
+  <button ion-button (click)="stopWatch()" >stopWatch</button>
+</ion-content>
