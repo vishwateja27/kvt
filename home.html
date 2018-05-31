@@ -1,30 +1,33 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      My App
+      Ionic Media Capture
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  <div id="map" style="height:50%; margin-left: 2%;margin-right: 2%; margin-top: 2%;"></div>
-
-  <ion-card>
-    <ion-card-header>
-      Latitude:
-    </ion-card-header>
-    <ion-card-content>
-      {{lat}}
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      Longitude:
-    </ion-card-header>
-    <ion-card-content>
-      {{lon}}
-    </ion-card-content>
-  </ion-card>
-  <button ion-button (click)="startWatch()"> startwatch</button>
-  <button ion-button (click)="stopWatch()" >stopWatch</button>
+ 
+<ion-content>
+  
+    <video controls autoplay #myvideo style="width:100%;height:50%">
+      </video>
+  <ion-row>
+    <ion-col>
+      <button ion-button full (click)="captureAudio()">Capture Audio</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button full (click)="startWatch();captureVideo();">Capture Video</button>
+    </ion-col>
+    <ion-col>
+      <button (click)="mappage()" ion-button>maps</button>
+    </ion-col>
+  </ion-row>
+ <!-- <p>lat:{{lat}} </p>
+ <p>lon:{{lon}} </p> -->
+  <ion-list>
+    <ion-item *ngFor="let file of mediaFiles"  text-wrap>
+      {{ file.name }}
+      <p>{{ file.size / 1000 / 1000 | number }} MB</p>
+      <button (click)="play(file)" ion-button>play</button><button ion-button (click)="mappage()">preview</button>
+    </ion-item>
+  </ion-list>
 </ion-content>
