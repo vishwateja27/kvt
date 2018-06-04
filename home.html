@@ -12,14 +12,11 @@
       </video>
   <ion-row>
     <ion-col>
-      <button ion-button full (click)="captureAudio()">Capture Audio</button>
-    </ion-col>
-    <ion-col>
-      <button ion-button full (click)="startWatch();captureVideo();">Capture Video</button>
+      <button ion-button full (click)="captureVideo()">Capture Video</button>
     </ion-col>
   </ion-row>
- <!-- <p>lat:{{lat}} </p>
- <p>lon:{{lon}} </p> -->
+  
+  <p>lat:{{lat}} </p>
   <ion-list>
     <ion-item *ngFor="let file of mediaFiles"  text-wrap>
       {{ file.name }}
@@ -27,4 +24,6 @@
       <button (click)="play(file)" ion-button>play</button><button ion-button (click)="mappage()">preview</button>
     </ion-item>
   </ion-list>
+  <p>{{c}} </p>
+
 </ion-content>
