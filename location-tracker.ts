@@ -64,14 +64,9 @@ export class LocationTrackerProvider {
     this.backgroundGeolocation.start();
    
    
-    // Foreground Tracking
+    
    
-  let options = {
-    frequency: 3000,
-    enableHighAccuracy: true
-  };
  
-}
  
   stopTracking() {
      
@@ -84,7 +79,7 @@ export class LocationTrackerProvider {
   {
     this.LatLon_arr.length=0;
   }
-  videoCapture():any {
+  videoCapture() {
     this.flag=0;
     let duration;
     let options: CaptureVideoOptions = {
